@@ -836,6 +836,17 @@
 #s17vw .rng input::-moz-range-thumb{pointer-events:auto;width:12px;height:12px;border-radius:50%;background:#0d4a8c;border:2px solid #fff;cursor:pointer;}
 #s17vw .rng .lab{position:absolute;top:-3px;left:0;right:0;display:flex;justify-content:space-between;font-size:8px;font-weight:800;color:#5a7088;pointer-events:none;}
 </style>
+<style>
+/* v004 */
+.tierh .tavg{display:block;margin-top:9px;font-style:normal;font-size:19px;font-weight:800;color:#fff;line-height:1;letter-spacing:-.01em;}
+.tierh .tavg small{font-size:10px;font-weight:600;opacity:.88;margin-left:4px;letter-spacing:0;}
+.cmp .tpr{margin-left:auto;font-size:11.5px;font-weight:800;color:#0b3d73;white-space:nowrap;font-variant-numeric:tabular-nums;}
+.cmp .tpr.na{font-size:9.5px;font-weight:700;color:#9aa8b8;}
+.tiernote{font-size:9.5px;color:#7a8794;margin:3px 2px 0;line-height:1.45;}
+.barc-n.ex{color:#86e0a5;font-weight:700;line-height:1.42;}
+.barc-n.ex .src{font-weight:600;color:#8a97a5;}
+.v4note{font-size:8.5px;color:#8a97a5;margin-top:3px;line-height:1.4;}
+</style>
 </head>
 <body>
 
@@ -899,12 +910,18 @@
       <div class="chart-src"><b>Fonte,</b> ANS/SIB, benefici&#225;rios de assist&#234;ncia m&#233;dica em dez. de cada ano, via Healthcare Data House (Ita&#250; BBA); Banco Mundial, WDI SP.POP.TOTL (ONU, World Population Prospects 2024).</div>
     </div>
 
-<div class="c6sec"><span class="stp">2</span><span>Grau de formalização</span></div>
+<div class="c6sec"><span class="stp">2</span><span>O Brasil gasta como país rico, mas com o mix invertido</span></div>
+<div class="c6card">
+      <div class="c6title">Gasto em saúde, % do PIB, governo × famílias, Brasil e pares</div>
+      <div class="chart-wrap" style="height:300px;"><canvas id="chartPIBtam"></canvas></div>
+      <div class="chart-src"><b>Fonte,</b> IBGE, Conta-Sat&eacute;lite de Sa&uacute;de 2021; ANS, taxa de cobertura (abr/2026); OCDE, Health at a Glance; CNES/DataSUS 2025.</div>
+    </div>
+<div class="c6sec"><span class="stp">3</span><span>Grau de formalização</span></div>
 <div class="c6card">
       <div class="c6title">Grau de formalização do emprego (% dos ocupados)</div>
       <div class="chart-wrap" style="height:240px;"><canvas id="chartFormal16"></canvas></div>
 
-      <div class="chart-src"><b>Fonte,</b> OIT/ILOSTAT e ONU, base ODS 8.3.1; IBGE, INEGI, INDEC, StatsSA e PLFS; Eurostat, EU-SILC, 2018-2024.</div>
+      <div class="chart-src"><b>Fonte,</b> OIT/ILOSTAT e ONU, base ODS 8.3.1; IBGE, INEGI, INDEC, StatsSA e PLFS; Eurostat, EU-SILC, 2018-2024.</div><div class="v4note">M&#233;dia OCDE: m&#233;dia simples dos 32 membros com dado na base ODS 8.3.1 da ONU (s&#233;rie SL_ISV_IFEM), &#250;ltimo ano entre 2018 e 2025; faltam Austr&#225;lia, Canad&#225;, EUA, Israel, Jap&#227;o e Nova Zel&#226;ndia.</div>
     </div>
     </div>
   </section>
@@ -966,6 +983,95 @@
  <div class="chart-src"><b>Fonte,</b> IESS TD70 (2017); Rede D'Or, Formulário de Referência.</div>
  </div>
  </div>
+<div class="c6sec"><span class="stp">3</span><span>O hist&#243;rico, 2000 a 2025: o SUS internou no ritmo da popula&#231;&#227;o, n&#227;o da idade; o privado, acima da idade</span></div>
+<div class="c6row">
+ <div class="c6card" data-g39="1"><div class="c6title">Interna&#231;&#245;es do SUS &#215; demografia, &#237;ndice 100 no in&#237;cio da janela</div><div class="rng" id="s5hRA" style="display:none;"><input type="range" class="r0" min="0" max="25" step="1" value="0"><input type="range" class="r1" min="0" max="25" step="1" value="25"></div><div class="chart-wrap" style="height:300px;"><canvas id="s5hA"></canvas></div><div class="chart-src"><b>Fonte,</b> DATASUS, SIH/SUS, interna&#231;&#245;es por ano de processamento, 2000 a 2025; IBGE, Proje&#231;&#227;o da Popula&#231;&#227;o 2024; IESS (intensidade por faixa, bloco 2).</div><div class="v4note">Esperado pela idade: popula&#231;&#227;o de 0 a 14, 15 a 59 e 60+ &#215; 0,12, 0,15 e 0,38 interna&#231;&#245;es por pessoa ao ano, o m&#233;todo do bloco 4. Em 2008 o SIH passou para a tabela unificada do SUS (quebra de s&#233;rie).</div></div>
+ <div class="c6card" data-g39="1"><div class="c6title">Sa&#250;de suplementar, interna&#231;&#245;es &#215; benefici&#225;rios, &#237;ndice 100 no in&#237;cio da janela</div><div class="rng" id="s5hRB" style="display:none;"><input type="range" class="r0" min="0" max="11" step="1" value="0"><input type="range" class="r1" min="0" max="11" step="1" value="11"></div><div class="chart-wrap" style="height:300px;"><canvas id="s5hB"></canvas></div><div class="chart-src"><b>Fonte,</b> ANS, SIP (IESS, An&#225;lise Especial do Mapa Assistencial, 2014 a 2019; ANS, dados abertos do SIP, 2020 a 2025) e SIB, benefici&#225;rios de assist&#234;ncia m&#233;dica por faixa et&#225;ria em dez. de cada ano; IESS (intensidade por faixa, bloco 2).</div><div class="v4note">Esperado pela idade: benefici&#225;rios de 0 a 18, 19 a 58 e 59+ &#215; 0,12, 0,15 e 0,38 interna&#231;&#245;es por vida ao ano.</div></div>
+</div>
+<div class="s45phl" style="margin:2px 0 16px;"><div class="r"><span class="k n">1</span><span><b>SUS, 2000 a 2019:</b> as interna&#231;&#245;es subiram 2,0%, contra +19,0% da popula&#231;&#227;o e +29,8% pela idade; a taxa caiu de 68,3 para 58,6 por mil habitantes.</span></div><div class="r"><span class="k b">2</span><span><b>SUS, 2022 a 2025:</b> +17,3% em tr&#234;s anos, 61% disso em eletivas (de 2,7 para 4,0 milh&#245;es), com o programa federal de redu&#231;&#227;o de filas (Portaria GM/MS 90/2023); a taxa voltou a 68 por mil, a de 2000, ainda 12% abaixo do que a idade explicaria.</span></div><div class="r"><span class="k b">3</span><span><b>Sa&#250;de suplementar, 2014 a 2025:</b> interna&#231;&#245;es +30,7%, com benefici&#225;rios +4,6% e a idade da carteira explicando +10,0%; as interna&#231;&#245;es por vida foram de 0,15 para 0,19 ao ano, 19% acima do que a idade explica.</span></div></div>
+<script>(function(){if(typeof Chart==='undefined')return;if(window.ChartDataLabels){try{Chart.register(window.ChartDataLabels);}catch(e){}}
+var D={"YA":[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"SUS":[11937323,11756354,11713749,11638194,11492883,11429133,11338039,11330096,10743603,11128809,11357965,11281571,11092589,11197160,11320287,11377716,11297068,11469861,11816641,12181726,10402808,11481939,12377242,13215017,14037412,14512717],"P":[[174696,52260,107206,15230],[177004,51985,109370,15648],[179228,51669,111484,16076],[181378,51330,113529,16519],[183470,50981,115497,16991],[185518,50618,117395,17506],[187535,50232,119236,18067],[189459,49754,121033,18672],[191335,49242,122777,19316],[193174,48714,124461,19999],[194749,48122,125910,20718],[196159,47524,127160,21475],[197671,46963,128434,22273],[199227,46410,129701,23116],[200811,45906,130906,23999],[202404,45502,131984,24918],[203872,45103,132898,25871],[205212,44705,133644,26862],[206529,44401,134239,27890],[207900,44122,134828,28951],[209165,43789,135397,29979],[210104,43395,135805,30903],[210863,42984,136014,31864],[211695,42526,136187,32981],[212584,42055,136359,34170],[213421,41584,136466,35371]],"YB":[2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"INT":[7584670,7924127,7833282,7977131,8110557,8639578,7347426,7726851,8767533,9188091,9098082,9910860],"BEN":[[50531748,12321798,31796883,6411018],[49279085,11925932,30796949,6554528],[47685266,11479744,29555341,6649302],[47144909,11319415,29056309,6768578],[47122155,11288192,28893038,6940401],[47077981,11266140,28752617,7058783],[47939243,11402695,29181163,7355172],[49274613,11603987,30105428,7565007],[50530569,11927443,30761880,7841099],[51254745,11952307,31107726,8194582],[51956946,12018592,31558561,8379688],[52865947,12041445,32192434,8631978]]},W=[0.12,0.15,0.38];
+function endLab(){return {id:'s5hEnd',afterDatasetsDraw:function(ch){var g=ch.ctx,P=[];ch.data.datasets.forEach(function(ds,k){var m=ch.getDatasetMeta(k);if(m.hidden)return;var n=ds.data.length,e=m.data[n-1];if(!e||ds.data[n-1]==null)return;P.push({x:e.x,y:e.y,v:ds.data[n-1],c:ds.borderColor});});
+ P.sort(function(a,b){return a.y-b.y;});for(var i=1;i<P.length;i++){if(P[i].y-P[i-1].y<12)P[i].y=P[i-1].y+12;}
+ g.save();g.font='800 10.5px Inter, Arial, sans-serif';g.textAlign='left';g.textBaseline='middle';g.lineJoin='round';
+ P.forEach(function(p){var t=String(Math.round(p.v));g.strokeStyle='#fff';g.lineWidth=3;g.strokeText(t,p.x+6,p.y);g.fillStyle=p.c;g.fillText(t,p.x+6,p.y);});g.restore();}};}
+function build(id,rid,YR,DS,series){var el=document.getElementById(id);if(!el)return;var rng=document.getElementById(rid),lab=YR.map(String),N=lab.length;if(rng)rng.__lab=lab.slice();
+ function make(i0,i1){var S=series(i0,i1);return {labels:lab.slice(i0,i1+1),datasets:DS.map(function(d,k){var o={data:S[k],fill:false,tension:.25,pointRadius:0,pointHoverRadius:4,datalabels:{display:false}};for(var q in d)o[q]=d[q];return o;})};}
+ var ch=new Chart(el,{type:'line',data:make(0,N-1),plugins:[endLab()],options:{responsive:true,maintainAspectRatio:false,animation:false,
+  layout:{padding:{top:6,right:30,left:2,bottom:0}},interaction:{mode:'index',intersect:false},
+  plugins:{legend:{display:true,position:'bottom',labels:{usePointStyle:true,pointStyle:'line',boxWidth:22,padding:10,font:{size:9.5,weight:'700'},color:'#243b53'}},
+   tooltip:{callbacks:{label:function(c){return c.dataset.label+': '+Math.round(c.parsed.y);}}}},
+  scales:{x:{grid:{display:false},border:{color:'#dbe6f2'},ticks:{color:'#5a7088',font:{size:9.5,weight:'700'},maxRotation:0,autoSkip:true,maxTicksLimit:14}},
+   y:{grid:{color:'#eef2f7'},border:{display:false},ticks:{color:'#94a3b8',font:{size:9}}}}}});
+ if(rng){var a=rng.querySelector('.r0'),b=rng.querySelector('.r1');var upd=function(){var i0=+a.value,i1=+b.value;if(i1-i0<2)return;var d=make(i0,i1);ch.data.labels=d.labels;ch.data.datasets.forEach(function(ds,k){ds.data=d.datasets[k].data;});ch.update('none');};a.addEventListener('input',upd);b.addEventListener('input',upd);}}
+var DS=[{label:'Internações',borderColor:'#0b3d73',backgroundColor:'#0b3d73',borderWidth:3},
+ {label:'Esperado pela idade',borderColor:'#2f74b8',backgroundColor:'#2f74b8',borderWidth:2.4,borderDash:[6,4]},
+ {label:'População',borderColor:'#94a3b8',backgroundColor:'#94a3b8',borderWidth:2},
+ {label:'População 60+',borderColor:'#8fb3d9',backgroundColor:'#8fb3d9',borderWidth:2}];
+build('s5hA','s5hRA',D.YA,DS,function(i0,i1){var P=D.P,r=[[],[],[],[]],ex=function(i){return W[0]*P[i][1]+W[1]*P[i][2]+W[2]*P[i][3];};
+ for(var i=i0;i<=i1;i++){r[0].push(100*D.SUS[i]/D.SUS[i0]);r[1].push(100*ex(i)/ex(i0));r[2].push(100*P[i][0]/P[i0][0]);r[3].push(100*P[i][3]/P[i0][3]);}return r;});
+var DSB=[{label:'Internações',borderColor:'#0b3d73',backgroundColor:'#0b3d73',borderWidth:3},
+ {label:'Esperado pela idade da carteira',borderColor:'#2f74b8',backgroundColor:'#2f74b8',borderWidth:2.4,borderDash:[6,4]},
+ {label:'Beneficiários',borderColor:'#94a3b8',backgroundColor:'#94a3b8',borderWidth:2},
+ {label:'Beneficiários 59+',borderColor:'#8fb3d9',backgroundColor:'#8fb3d9',borderWidth:2}];
+build('s5hB','s5hRB',D.YB,DSB,function(i0,i1){var B=D.BEN,r=[[],[],[],[]],ex=function(i){return W[0]*B[i][1]+W[1]*B[i][2]+W[2]*B[i][3];};
+ for(var i=i0;i<=i1;i++){r[0].push(100*D.INT[i]/D.INT[i0]);r[1].push(100*ex(i)/ex(i0));r[2].push(100*B[i][0]/B[i0][0]);r[3].push(100*B[i][3]/B[i0][3]);}return r;});
+})();</script>
+<div class="c6sec"><span class="stp">4</span><span>g de volume na perpetuidade</span></div>
+<div class="c6card" id="s5g">
+  
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start;">
+   <div class="gc"><div class="c6title">Interna&#231;&#245;es &#183; vidas (IBGE) &#215; intensidade por faixa et&#225;ria (IESS), % a.a. real por quinqu&#234;nio</div><div class="chart-wrap" style="height:244px;"><canvas id="s5gI"></canvas></div></div>
+   <div class="gc"><div class="c6title">Oncologia (infus&#245;es) &#183; casos novos de c&#226;ncer no Brasil (IARC/OMS), % a.a. por quinqu&#234;nio</div><div class="chart-wrap" style="height:244px;"><canvas id="s5gC"></canvas></div></div>
+   <div class="gc"><div class="c6title">Hospital D'Or &#183; 30% c&#226;ncer + 70% interna&#231;&#245;es ex-c&#226;ncer, % a.a. real por quinqu&#234;nio</div><div class="chart-wrap" style="height:244px;"><canvas id="s5gH"></canvas></div></div>
+  </div>
+  <div class="gc" style="margin-top:14px;">
+   <div class="c6title" style="margin-bottom:6px;">g real constante com o mesmo valor presente da trajet&#243;ria, % a.a.; r* = (1 + Ke nominal) &#247; (1 + infla&#231;&#227;o de 4%) &#8722; 1</div>
+   <table>
+    <thead><tr><th></th><th colspan="4">In&#237;cio da perpetuidade, Ke de 14% (r* de 9,6%)</th><th colspan="5" class="sp">Ke nominal, perpetuidade a partir de 2036</th></tr>
+    <tr><th></th><th>2026</th><th>2032</th><th>2036</th><th>2040</th><th class="sp">12%<small>r* 7,7%</small></th><th>13%<small>r* 8,7%</small></th><th>14%<small>r* 9,6%</small></th><th>15%<small>r* 10,6%</small></th><th>16%<small>r* 11,5%</small></th></tr></thead>
+    <tbody>
+    <tr><td>Interna&#231;&#245;es</td><td>0,8%</td><td>0,6%</td><td class="bs">0,5%</td><td>0,4%</td><td class="sp">0,5%</td><td>0,5%</td><td class="bs">0,5%</td><td>0,5%</td><td>0,6%</td></tr>
+    <tr><td>Oncologia (infus&#245;es)</td><td>2,2%</td><td>1,9%</td><td class="bs">1,6%</td><td>1,4%</td><td class="sp">1,5%</td><td>1,6%</td><td class="bs">1,6%</td><td>1,7%</td><td>1,7%</td></tr>
+    <tr><td>Hospital D'Or</td><td>1,2%</td><td>1,0%</td><td class="bs">0,8%</td><td>0,7%</td><td class="sp">0,8%</td><td>0,8%</td><td class="bs">0,8%</td><td>0,9%</td><td>0,9%</td></tr>
+    </tbody>
+   </table>
+  </div>
+  <div style="margin-top:12px;border-radius:10px;background:linear-gradient(135deg,#0b2440 0%,#15559a 60%,#2f80c8 100%);box-shadow:0 3px 10px -4px rgba(11,36,64,.45);color:#fff;padding:10px 16px;font-size:11px;line-height:1.55;font-weight:600;"><b>Interna&#231;&#245;es:</b> crescem cada vez mais devagar. Em 2041 a popula&#231;&#227;o para de crescer, e o envelhecimento segura o volume at&#233; 2060. <b>Oncologia:</b> cresce mais r&#225;pido que as interna&#231;&#245;es, mas desacelera at&#233; zerar em 2070 (a IARC projeta at&#233; 2050; de 2050 a 2070 o deck tira 0,33 p.p. por quinqu&#234;nio, o ritmo m&#233;dio de desacelera&#231;&#227;o da IARC de 2030 a 2050). <b>Hospital D'Or:</b> as infus&#245;es s&#227;o 11,6% da receita bruta e, como na Europa, os medicamentos s&#227;o ~31% do gasto com c&#226;ncer; logo, o resto do tratamento soma ~26% da receita, ~30% da linha de hospital. Esse peso sobe a 36% em 2041 e a 43% em 2070; os outros 70% seguem as interna&#231;&#245;es sem c&#226;ncer.</div>
+  <div class="chart-src" style="margin-top:8px;"><b>Fonte,</b> IBGE, Proje&#231;&#227;o da Popula&#231;&#227;o 2024; IESS; IARC/OMS, Cancer Tomorrow; Hofmarcher et al., EJC 2020; Rede D'Or, release 2T26.</div>
+  <script>(function(){if(typeof Chart==='undefined')return;if(window.ChartDataLabels){try{Chart.register(window.ChartDataLabels);}catch(e){}}
+var LB=[['2025-','2030'],['2030-','2035'],['2035-','2040'],['2040-','2045'],['2045-','2050'],['2050-','2055'],['2055-','2060'],['2060-','2065'],['2065-','2070'],['ap\u00f3s','2070']];
+function nb(v){return (v<-0.04?'\u2212':'')+Math.abs(v).toFixed(1).replace('.',',');}
+function mk(id,V,cut,G,l1,l2){var el=document.getElementById(id);if(!el)return;var ctx=el.getContext('2d');
+ var g=ctx.createLinearGradient(0,0,0,260);g.addColorStop(0,'rgba(13,74,140,.30)');g.addColorStop(1,'rgba(13,74,140,.02)');
+ var A=V.map(function(v,i){return i<=cut?v:null;}),B=V.map(function(v,i){return i>=cut?v:null;});
+ function dl(col,show){return {display:show,anchor:'end',align:function(c){return c.dataset.data[c.dataIndex]<0?'bottom':'top';},offset:5,color:col,font:function(c){return {weight:'800',size:c.dataIndex===0?11.5:9};},textStrokeColor:'#fff',textStrokeWidth:4,formatter:function(v){return nb(v)+'%';}};}
+ new Chart(el,{data:{labels:LB,datasets:[
+  {type:'line',label:l1,data:A,borderColor:'#0d4a8c',backgroundColor:g,fill:'origin',borderWidth:3,tension:.25,
+   pointRadius:function(c){return c.dataset.data[c.dataIndex]==null?0:(c.dataIndex===0?6:3.5);},pointBackgroundColor:function(c){return c.dataIndex===0?'#0d4a8c':'#fff';},pointBorderColor:'#0d4a8c',pointBorderWidth:2,
+   datalabels:dl('#0b3d73',function(c){return c.dataset.data[c.dataIndex]!=null;})},
+  {type:'line',label:l2,data:B,borderColor:'#6b8fb8',backgroundColor:'rgba(107,143,184,.08)',fill:'origin',borderDash:[5,4],borderWidth:2.4,tension:.25,
+   pointRadius:function(c){return (c.dataset.data[c.dataIndex]==null||c.dataIndex===cut)?0:3.5;},pointBackgroundColor:'#fff',pointBorderColor:'#6b8fb8',pointBorderWidth:2,
+   datalabels:dl('#5a7088',function(c){return c.dataset.data[c.dataIndex]!=null&&c.dataIndex>cut;})}
+ ]},options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:34,bottom:2,right:16,left:4}},
+  plugins:{legend:{display:true,position:'bottom',align:'center',labels:{usePointStyle:true,pointStyle:'rectRounded',boxWidth:11,padding:10,font:{size:9,weight:'700'},color:'#243b53'}},
+   tooltip:{callbacks:{title:function(it){return LB[it[0].dataIndex].join(' ').replace('- ','-');},label:function(c){return c.dataset.label+': '+nb(c.parsed.y)+'% a.a.';}}}},
+  scales:{x:{grid:{display:false},border:{color:'#dbe6f2'},ticks:{color:'#5a7088',font:{size:9,weight:'700'},padding:4,autoSkip:false,maxRotation:0}},
+   y:{min:-1,max:4,grid:{color:function(c){return c.tick.value===0?'#94a3b8':'#f2f6fa';}},border:{display:false},ticks:{color:'#b6c3d1',font:{size:9},stepSize:1,callback:function(v){return v+'%';}}}}},
+  plugins:[{id:id+'Ann',beforeDatasetsDraw:function(c){var x=c.scales.x,y=c.scales.y,a=c.ctx,yy=y.getPixelForValue(G);a.save();
+    a.strokeStyle='rgba(11,36,64,.55)';a.setLineDash([4,4]);a.lineWidth=1.3;a.beginPath();a.moveTo(x.left,yy);a.lineTo(x.right,yy);a.stroke();a.setLineDash([]);
+    a.fillStyle='#0b2440';a.font='800 10px system-ui,Arial';a.textAlign='left';a.textBaseline='middle';a.fillText('g',x.right+3,yy);a.restore();},
+   afterDatasetsDraw:function(c){var a=c.ctx,ca=c.chartArea;a.save();var txt='g real desde 2036 \u00b7 '+nb(G)+'% a.a.';
+    a.font='800 11.5px system-ui,Arial';var w=a.measureText(txt).width+22,h=23,x=ca.left+4,y=ca.top-30;a.fillStyle='#0d4a8c';
+    if(a.roundRect){a.beginPath();a.roundRect(x,y,w,h,11);a.fill();}else a.fillRect(x,y,w,h);
+    a.fillStyle='#fff';a.textAlign='left';a.textBaseline='middle';a.fillText(txt,x+11,y+h/2+.5);a.restore();}}]});}
+mk('s5gI',[0.996,0.865,0.800,0.679,0.432,0.228,0.074,-0.145,-0.350,-0.121],8,0.518,'IBGE 2024 \u00d7 pesos IESS','ap\u00f3s 2070, ritmo de 2054-70');
+mk('s5gC',[2.843,2.567,2.263,1.914,1.572,1.240,0.910,0.580,0.250,0.000],4,1.622,'Cancer Tomorrow, base GLOBOCAN 2024','extens\u00e3o a zero em 2070');
+mk('s5gH',[1.450,1.312,1.207,1.039,0.779,0.548,0.347,0.097,-0.145,-0.079],4,0.847,'30% c\u00e2ncer + 70% interna\u00e7\u00f5es','com a extens\u00e3o de oncologia');
+})();</script>
+ </div>
+<div class="c6sec"><span class="stp">5</span><span>PIB, emprego e benefici&#225;rios at&#233; 2032, as estimativas do RDORmod</span></div>
+<div class="c6card" id="s5ch"><div style="display:flex;gap:16px;flex-wrap:wrap;font-size:9.5px;font-weight:700;color:#5a7088;margin:0 0 8px;"><span style="display:inline-flex;align-items:center;gap:6px;"><i style="display:inline-block;width:18px;height:3px;border-radius:2px;background:#0b3d73;"></i>realizado, 2019 a 2025</span><span style="display:inline-flex;align-items:center;gap:6px;"><i style="display:inline-block;width:18px;height:0;border-top:2.5px dashed #5f93c4;"></i>projetado no RDORmod v34, 2026 a 2032</span></div><div style="display:grid;grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr) 22px minmax(0,1fr);gap:6px;align-items:stretch;"><div class="gc"><div class="c6title" style="margin-bottom:2px;">PIB, % a/a</div><div style="font-size:9.8px;color:#5a7088;font-weight:600;line-height:1.35;min-height:27px;margin:0 0 4px;">Focus at&#233; 2029; de 2030 a 2032, produtividade de 1,67% a.a. &#215; popula&#231;&#227;o de 15 a 59 anos</div><div class="chart-wrap" style="height:228px;"><canvas id="s5chA"></canvas></div></div><div style="display:flex;align-items:center;justify-content:center;color:#6f9fd0;font-size:26px;font-weight:800;">&rarr;</div><div class="gc"><div class="c6title" style="margin-bottom:2px;">Emprego formal, % a/a</div><div style="font-size:9.8px;color:#5a7088;font-weight:600;line-height:1.35;min-height:27px;margin:0 0 4px;">proje&#231;&#227;o = 0,89% + 0,8 &#215; PIB; 2026 = input do modelo</div><div class="chart-wrap" style="height:228px;"><canvas id="s5chB"></canvas></div></div><div style="display:flex;align-items:center;justify-content:center;color:#6f9fd0;font-size:26px;font-weight:800;">&rarr;</div><div class="gc"><div class="c6title" style="margin-bottom:2px;">Benefici&#225;rios m&#233;dico-hospitalares, % a/a</div><div style="font-size:9.8px;color:#5a7088;font-weight:600;line-height:1.35;min-height:27px;margin:0 0 4px;">proje&#231;&#227;o = 0,05% + 0,78 &#215; emprego; 2026 = input do modelo</div><div class="chart-wrap" style="height:228px;"><canvas id="s5chC"></canvas></div></div></div><div class="chart-src" style="margin-top:6px;"><b>Fonte,</b> BCB, SGS 7326 (PIB) e Focus; CAGED e Novo CAGED (emprego formal, saldo &#247; estoque, como no bloco 1); ANS/SIB via Healthcare Data House (Ita&#250; BBA), benefici&#225;rios m&#233;dico-hospitalares de dezembro; RDORmod v34, aba MOD, linhas 6, 17 e 18 (2026 a 2032).</div><script>(function(){if(typeof Chart==="undefined")return;if(window.ChartDataLabels){try{Chart.register(window.ChartDataLabels);}catch(e){}}var Y=["2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032"],NR=7;function f(v){return (v<-0.04?"\u2212":(v>0.04?"+":""))+Math.abs(v).toFixed(1).replace(".",",");}function al(c){var d=c.dataset.data,i=c.dataIndex,v=d[i];if(v==null)return "top";var p=null,n=null;for(var k=i-1;k>=0;k--){if(d[k]!=null){p=d[k];break;}}for(var k2=i+1;k2<d.length;k2++){if(d[k2]!=null){n=d[k2];break;}}if(p!=null&&n!=null){if(v<=p&&v<=n)return "bottom";if(v>=p&&v>=n)return "top";return (i%2?"bottom":"top");}if(n!=null)return v<n?"bottom":"top";if(p!=null)return v<p?"bottom":"top";return "top";}function mk(id,V,mn,mx,st){var el=document.getElementById(id);if(!el)return;var R=V.map(function(v,i){return i<NR?v:null;}),P=V.map(function(v,i){return i>=NR-1?v:null;});function lab(col,show){return {display:show,align:al,anchor:"center",offset:4,clamp:true,clip:false,color:function(c){var v=c.dataset.data[c.dataIndex];return v<0?"#b3261e":col;},font:function(c){return {weight:"800",size:(c.dataIndex===NR-1||c.dataIndex===Y.length-1)?9.2:8.2};},textStrokeColor:"#fff",textStrokeWidth:3,formatter:function(v){return v==null?"":f(v);}};}new Chart(el,{type:"line",data:{labels:Y,datasets:[{label:"realizado",data:R,borderColor:"#0b3d73",backgroundColor:"rgba(11,61,115,.07)",fill:"origin",borderWidth:2.6,tension:.28,spanGaps:false,pointRadius:function(c){return c.dataset.data[c.dataIndex]==null?0:3;},pointBackgroundColor:function(c){var v=c.dataset.data[c.dataIndex];return v!=null&&v<0?"#b3261e":"#0b3d73";},pointBorderColor:"#fff",pointBorderWidth:1.2,datalabels:lab("#0b3d73",function(c){return c.dataset.data[c.dataIndex]!=null;})},{label:"projetado",data:P,borderColor:"#5f93c4",backgroundColor:"rgba(95,147,196,.08)",fill:"origin",borderWidth:2.4,borderDash:[5,4],tension:.28,spanGaps:false,pointRadius:function(c){return (c.dataset.data[c.dataIndex]==null||c.dataIndex===NR-1)?0:3;},pointBackgroundColor:"#fff",pointBorderColor:"#5f93c4",pointBorderWidth:1.6,datalabels:lab("#3f6fa6",function(c){return c.dataset.data[c.dataIndex]!=null&&c.dataIndex>=NR;})}]},options:{responsive:true,maintainAspectRatio:false,animation:false,layout:{padding:{top:12,right:12,left:2,bottom:0}},plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.dataset.label+": "+f(c.parsed.y)+"%";}}}},scales:{x:{grid:{display:false},border:{color:"#dbe6f2"},ticks:{color:"#5a7088",font:{size:8.4,weight:"700"},maxRotation:0,autoSkip:false,callback:function(v,i){return "'"+Y[i].slice(2);}}},y:{min:mn,max:mx,grid:{color:function(c){return c.tick.value===0?"#94a3b8":"#eef2f7";}},border:{display:false},ticks:{color:"#94a3b8",font:{size:8.5},stepSize:st,callback:function(v){return v+"%";}}}}}});}mk("s5chA",[1.22, -3.88, 4.62, 3.0, 3.24, 3.4, 2.29, 1.85, 1.4, 1.83, 2.0, 1.7, 1.7, 1.7],-6,6,2);mk("s5chB",[1.6, 0.4, 6.7, 4.7, 3.2, 3.6, 2.6, 1.92, 2.01, 2.35, 2.49, 2.25, 2.25, 2.25],-2,8,2);mk("s5chC",[-0.09, 1.83, 2.79, 2.56, 1.46, 1.4, 2.04, 1.87, 1.62, 1.89, 1.99, 1.81, 1.81, 1.81],-1,4,1);})();</script></div>
     </div>
   </section>
 <section class="slide">
@@ -974,6 +1080,36 @@
 <span class="chip">An&#225;lise do setor &#183; Segmento Hospitalar</span>
 <h3 class="section"><span class="kick">Estrutura do mercado</span>O mercado de hospitais &#233; concentrado ou fragmentado?</h3>
 <p><b>Fragmentado na oferta, concentrado na geografia.</b> As 5 maiores redes t&#234;m s&#243; ~<b>15%</b> dos ~264 mil leitos privados (FBH, inclui leitos privados que atendem o SUS), h&#225; ~<b>4,5 mil</b> hospitais privados, n&#227;o existe oligop&#243;lio. Mas o <b>Sudeste e o Sul</b> re&#250;nem ~<b>60%</b> dos hospitais privados.</p>
+<div class="tier">
+      <div class="tierc">
+        <div class="tierh" style="background:linear-gradient(160deg,#3f9ae6,#0a66c2)"><b>Plano básico</b><span>alto volume, ticket baixo, quem vende o plano é o dono do hospital</span><em class="tavg">R$ 1.100<small>/m&#234;s, m&#233;dia em SP</small></em></div>
+        <div class="tierb">
+          <div class="cmp"><span class="tag tv">V</span>Hapvida NotreDame <i>operadora</i><b class="tpr">R$ 1.128</b></div>
+          <div class="cmp"><span class="tag tv">V</span>Sistema Unimed <i>cooperativa</i><b class="tpr na">n.a.</b></div>
+          <div class="cmp"><span class="tag tv">V</span>Prevent Senior <i>sênior</i><b class="tpr">R$ 1.071</b></div>
+        </div>
+      </div>
+      <div class="tierc">
+        <div class="tierh" style="background:linear-gradient(160deg,#3a6aa8,#173f6e)"><b>Plano intermediário</b><span>prestador credenciado pelas grandes seguradoras</span><em class="tavg">R$ 1.357<small>/m&#234;s, m&#233;dia em SP</small></em></div>
+        <div class="tierb">
+          <div class="cmp"><span class="tag th">H</span>Rede D'Or, São Luiz <i>credencia todas, SulAmérica é parcial</i><b class="tpr">R$ 1.459</b></div>
+          <div class="cmp"><span class="tag th">H</span>Rede Américas <i>JV Dasa + Amil</i><b class="tpr">R$ 1.340</b></div>
+          <div class="cmp"><span class="tag tc">C</span>Mater Dei<b class="tpr na">sem hospital em SP</b></div>
+          <div class="cmp"><span class="tag tc">C</span>Kora Saúde<b class="tpr na">sem hospital em SP</b></div>
+          <div class="cmp"><span class="tag th">H</span>Hospital Care <i>operadora regional</i><b class="tpr">R$ 1.273</b></div>
+        </div>
+      </div>
+      <div class="tierc">
+        <div class="tierh" style="background:linear-gradient(160deg,#0a5aa8,#00376e)"><b>Plano premium, topo</b><span>alto padrão, linhas executivas das seguradoras</span><em class="tavg">R$ 2.600<small>/m&#234;s, m&#233;dia em SP</small></em></div>
+        <div class="tierb">
+          <div class="cmp"><span class="tag tc">C</span>Albert Einstein<b class="tpr">R$ 2.884</b></div>
+          <div class="cmp"><span class="tag tc">C</span>Sírio-Libanês<b class="tpr">R$ 2.289</b></div>
+          <div class="cmp"><span class="tag tc">C</span>Star <i>linha premium da Rede D'Or</i><b class="tpr">R$ 2.626</b></div>
+        </div>
+      </div>
+    </div>
+<div class="tierleg"><span class="tag tv" style="display:inline-flex">V</span> verticalizado, a receita vem majoritariamente do próprio plano. <span class="tag th" style="display:inline-flex">H</span> híbrido, credencia terceiros (a maior parte da receita) e tem operadora no grupo. <span class="tag tc" style="display:inline-flex">C</span> credenciado puro, sem operadora, pago por planos de terceiros.</div>
+<div class="tiernote">Pre&#231;o: VCM de 34 a 38 anos dos planos sem coparticipa&#231;&#227;o com &#8805;50% dos hospitais da rede em SP, m&#233;dia ponderada por vidas, R$/m&#234;s (o m&#233;todo do bloco 1); Star = planos com o Vila Nova Star; Sistema Unimed sem pre&#231;o (a rede &#233; de cada singular). M&#233;dia de cada n&#237;vel = m&#233;dia simples dos grupos com hospital em SP. <b>Fonte,</b> ANS (NTRP/VCM, SIB jun/26 e PDA-008) via Healthcare Data House (Ita&#250; BBA).</div>
 <div class="c6sec"><span class="stp">1</span><span>As 10 maiores redes</span></div>
 <div class="c6card">
       <table class="maptbl"><thead><tr><th>Grupo</th><th class="n">Hospitais</th><th class="n">Leitos</th><th class="n">Leitos/hosp</th><th>Segmento de plano</th><th class="n">Ticket s/ copart p/ ter a rede<span style="display:block;font-size:9px;font-weight:600;opacity:.85;">VCM 34 a 38 anos, &#8805;50% dos hospitais da rede na UF; embaixo, contra o pre&#231;o de ter a D'Or na mesma UF</span></th><th>Oferta</th><th>Onde concentra</th></tr></thead><tbody><tr><td><b>Rede D'Or, São Luiz</b></td><td class="n">76</td><td class="n">13.555</td><td class="n">178</td><td>Interm. a premium</td><td class="n"><b style="color:#0b2440;">R$1.459</b> <span style="font-size:9.5px;font-weight:800;color:#5b7ea3;">SP</span><span style="display:block;font-size:9.5px;color:#5b7ea3;">base D'Or em SP &#183; RJ R$1.057 (base D'Or no RJ)</span></td><td><span class="pillH">Híbrido</span></td><td>SP, RJ, DF, NE</td></tr><tr><td><b>Sistema Unimed</b></td><td class="n">157</td><td class="n">~13.000 <span style="color:#8a97a5;">est.</span></td><td class="n">~83</td><td>Básico a interm.</td><td class="n"><span style="color:#8a97a5;">n.a.</span><span style="display:block;font-size:9.5px;color:#8a97a5;">rede de cada singular</span></td><td><span class="pillV">Verticalizado</span></td><td>Nacional, interior</td></tr><tr><td><b>Hapvida NotreDame</b></td><td class="n">74</td><td class="n">~7.000 <span style="color:#8a97a5;">est.</span></td><td class="n">~95</td><td>Básico</td><td class="n"><b style="color:#0b2440;">R$1.128</b> <span style="font-size:9.5px;font-weight:800;color:#5b7ea3;">SP</span><span style="display:block;font-size:9.5px;color:#5b7ea3;">&#8722;23% vs D'Or em SP (R$1.459)</span></td><td><span class="pillV">Verticalizado</span></td><td>NE e SP</td></tr><tr><td><b>Rede Américas (Dasa+Amil)</b></td><td class="n">25</td><td class="n">4.305</td><td class="n">172</td><td>Interm. a premium</td><td class="n"><b style="color:#0b2440;">R$1.340</b> <span style="font-size:9.5px;font-weight:800;color:#5b7ea3;">SP</span><span style="display:block;font-size:9.5px;color:#5b7ea3;">&#8722;8% vs D'Or em SP (R$1.459) &#183; RJ R$1.213, +15% vs D'Or no RJ (R$1.057)</span></td><td><span class="pillH">Híbrido</span></td><td>SP, RJ, DF, PR, PE</td></tr><tr><td><b>Kora Saúde</b></td><td class="n">17</td><td class="n">2.103</td><td class="n">124</td><td>Intermediário</td><td class="n"><b style="color:#0b2440;">R$1.638</b> <span style="font-size:9.5px;font-weight:800;color:#5b7ea3;">ES</span><span style="display:block;font-size:9.5px;color:#5b7ea3;">D'Or sem hospital no ES</span></td><td><span class="pillC">Credenciado</span></td><td>ES, CE, CO</td></tr><tr><td><b>Mater Dei</b></td><td class="n">9</td><td class="n">2.212</td><td class="n">246</td><td>Interm. a premium</td><td class="n"><b style="color:#0b2440;">R$964</b> <span style="font-size:9.5px;font-weight:800;color:#5b7ea3;">MG</span><span style="display:block;font-size:9.5px;color:#5b7ea3;">+6% vs D'Or em MG (R$906) &#183; BA R$1.484, &#8722;2% vs D'Or na BA (R$1.514)</span></td><td><span class="pillC">Credenciado</span></td><td>MG, BA, GO</td></tr><tr><td><b>Hospital Care</b></td><td class="n">9</td><td class="n">1.479</td><td class="n">164</td><td>Intermediário</td><td class="n"><b style="color:#0b2440;">R$1.273</b> <span style="font-size:9.5px;font-weight:800;color:#5b7ea3;">SP</span><span style="display:block;font-size:9.5px;color:#5b7ea3;">&#8722;13% vs D'Or em SP (R$1.459)</span></td><td><span class="pillH">Híbrido</span></td><td>Interior SP, Sul</td></tr><tr><td><b>Albert Einstein</b></td><td class="n">4</td><td class="n">754</td><td class="n">189</td><td>Premium, topo</td><td class="n"><b style="color:#0b2440;">R$2.884</b> <span style="font-size:9.5px;font-weight:800;color:#5b7ea3;">SP</span><span style="display:block;font-size:9.5px;color:#5b7ea3;">+98% vs D'Or em SP (R$1.459)</span></td><td><span class="pillC">Credenciado</span></td><td>SP</td></tr><tr><td><b>Sírio-Libanês</b></td><td class="n">3</td><td class="n">544</td><td class="n">181</td><td>Premium, topo</td><td class="n"><b style="color:#0b2440;">R$2.289</b> <span style="font-size:9.5px;font-weight:800;color:#5b7ea3;">SP</span><span style="display:block;font-size:9.5px;color:#5b7ea3;">+57% vs D'Or em SP (R$1.459)</span></td><td><span class="pillC">Credenciado</span></td><td>SP e DF</td></tr><tr><td><b>Prevent Senior</b></td><td class="n">~8</td><td class="n">n.d.</td><td class="n">n.d.</td><td>Sênior</td><td class="n"><b style="color:#0b2440;">R$1.071</b> <span style="font-size:9.5px;font-weight:800;color:#5b7ea3;">SP</span><span style="display:block;font-size:9.5px;color:#5b7ea3;">&#8722;27% vs D'Or em SP (R$1.459)</span></td><td><span class="pillV">Verticalizado</span></td><td>SP capital</td></tr></tbody></table>
@@ -1078,10 +1214,10 @@
     </div>
 <div class="c6sec"><span class="stp">2</span><span>O share de leitos ano a ano, quem consolida (2015 a 2026)</span></div>
 <div class="c6card">
-      <div class="c6title">Participação de cada grupo no total de leitos das grandes redes (%)</div>
+      <div class="s45hd"><div class="c6title" style="margin:0;" id="s6shT">Participa&#231;&#227;o de cada grupo no total de leitos privados e filantr&#243;picos (%)</div><div class="ssg" id="s6shB"><button class="on" data-m="cnes">Total de leitos (CNES)</button><button data-m="big">S&#243; as grandes redes</button></div></div>
       <div class="chart-wrap" style="height:300px;"><canvas id="chartBedsShareYr"></canvas></div>
 
-      <div class="chart-src"><b>Fonte,</b> releases das companhias.</div><div style="margin:8px 0 2px;padding:8px 12px;background:#f7f9fc;border-left:3px solid #0b3d73;border-radius:0 8px 8px 0;display:grid;gap:5px;"><div style="display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:10.8px;line-height:1.5;color:#3d556f;font-weight:500;"><span style="display:inline-block;padding:1px 7px;border-radius:4px;background:#0b3d73;color:#fff;font-size:9px;font-weight:800;margin-top:1px;white-space:nowrap;">Rede D&#39;Or</span><span><b style="color:#0b2440;">Rede D&#39;Or</b>, consolidou o setor: ganhou espa&#231;o em todo ano, exceto 2023, comprando hospitais e abrindo os pr&#243;prios, e hoje tem quase metade dos leitos das grandes redes.</span></div><div style="display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:10.8px;line-height:1.5;color:#3d556f;font-weight:500;"><span style="display:inline-block;padding:1px 7px;border-radius:4px;background:#8c6a4f;color:#fff;font-size:9px;font-weight:800;margin-top:1px;white-space:nowrap;">Hapvida+GNDI</span><span><b style="color:#0b2440;">Hapvida+GNDI</b>, cresceu comprando hospitais at&#233; 2019, perdeu terreno para a D&#39;Or na pandemia e, desde a fus&#227;o de 2022, parou de ganhar espa&#231;o.</span></div><div style="display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:10.8px;line-height:1.5;color:#3d556f;font-weight:500;"><span style="display:inline-block;padding:1px 7px;border-radius:4px;background:#0b8a97;color:#fff;font-size:9px;font-weight:800;margin-top:1px;white-space:nowrap;">Rede Am&#233;ricas</span><span><b style="color:#0b2440;">Rede Am&#233;ricas</b>, ficou fora da onda de compras, encolheu at&#233; 2022, parou em 2023 e, desde 2024, volta a perder espa&#231;o devagar.</span></div><div style="display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:10.8px;line-height:1.5;color:#3d556f;font-weight:500;"><span style="display:inline-block;padding:1px 7px;border-radius:4px;background:#7ba3cf;color:#0b2440;font-size:9px;font-weight:800;margin-top:1px;white-space:nowrap;">Kora</span><span><b style="color:#0b2440;">Kora</b>, dobrou de tamanho comprando hospitais fora do Esp&#237;rito Santo at&#233; 2021 e, sem novas compras, perde espa&#231;o devagar.</span></div><div style="display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:10.8px;line-height:1.5;color:#3d556f;font-weight:500;"><span style="display:inline-block;padding:1px 7px;border-radius:4px;background:#a9c0d8;color:#0b2440;font-size:9px;font-weight:800;margin-top:1px;white-space:nowrap;">Mater Dei</span><span><b style="color:#0b2440;">Mater Dei</b>, perdeu espa&#231;o at&#233; o IPO de 2021 e recuperou parte com as aquisi&#231;&#245;es feitas depois dele.</span></div><div style="display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:10.8px;line-height:1.5;color:#3d556f;font-weight:500;"><span style="display:inline-block;padding:1px 7px;border-radius:4px;background:#cdd8e4;color:#0b2440;font-size:9px;font-weight:800;margin-top:1px;white-space:nowrap;">Einstein+S&#237;rio</span><span><b style="color:#0b2440;">Einstein+S&#237;rio</b>, filantr&#243;picos premium, crescem s&#243; por obra pr&#243;pria, mais devagar que as redes que compram hospitais, e perdem espa&#231;o.</span></div></div>
+      <div class="chart-src"><b>Fonte,</b> releases das companhias; RDORmod v34, linha 102 (leitos totais da D&#39;Or); CNES/DataSUS, leitos de interna&#231;&#227;o de entidades empresariais e sem fins lucrativos, dez. de cada ano e jun/26.</div><div class="v4note">Leitos de cada grupo = participa&#231;&#227;o no total das grandes redes &#215; esse total, que sai dos leitos totais da D&#39;Or &#247; a participa&#231;&#227;o dela. Os grupos reportam leitos totais e o CNES conta leito instalado (D&#39;Or no 2T26: 13.617 totais, 10.879 no CNES), ent&#227;o a fatia dos grupos sai acima da que o CNES puro daria.</div><div style="margin:8px 0 2px;padding:8px 12px;background:#f7f9fc;border-left:3px solid #0b3d73;border-radius:0 8px 8px 0;display:grid;gap:5px;"><div style="display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:10.8px;line-height:1.5;color:#3d556f;font-weight:500;"><span style="display:inline-block;padding:1px 7px;border-radius:4px;background:#0b3d73;color:#fff;font-size:9px;font-weight:800;margin-top:1px;white-space:nowrap;">Rede D&#39;Or</span><span><b style="color:#0b2440;">Rede D&#39;Or</b>, consolidou o setor: ganhou espa&#231;o em todo ano, exceto 2023, comprando hospitais e abrindo os pr&#243;prios, e hoje tem quase metade dos leitos das grandes redes.</span></div><div style="display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:10.8px;line-height:1.5;color:#3d556f;font-weight:500;"><span style="display:inline-block;padding:1px 7px;border-radius:4px;background:#8c6a4f;color:#fff;font-size:9px;font-weight:800;margin-top:1px;white-space:nowrap;">Hapvida+GNDI</span><span><b style="color:#0b2440;">Hapvida+GNDI</b>, cresceu comprando hospitais at&#233; 2019, perdeu terreno para a D&#39;Or na pandemia e, desde a fus&#227;o de 2022, parou de ganhar espa&#231;o.</span></div><div style="display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:10.8px;line-height:1.5;color:#3d556f;font-weight:500;"><span style="display:inline-block;padding:1px 7px;border-radius:4px;background:#0b8a97;color:#fff;font-size:9px;font-weight:800;margin-top:1px;white-space:nowrap;">Rede Am&#233;ricas</span><span><b style="color:#0b2440;">Rede Am&#233;ricas</b>, ficou fora da onda de compras, encolheu at&#233; 2022, parou em 2023 e, desde 2024, volta a perder espa&#231;o devagar.</span></div><div style="display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:10.8px;line-height:1.5;color:#3d556f;font-weight:500;"><span style="display:inline-block;padding:1px 7px;border-radius:4px;background:#7ba3cf;color:#0b2440;font-size:9px;font-weight:800;margin-top:1px;white-space:nowrap;">Kora</span><span><b style="color:#0b2440;">Kora</b>, dobrou de tamanho comprando hospitais fora do Esp&#237;rito Santo at&#233; 2021 e, sem novas compras, perde espa&#231;o devagar.</span></div><div style="display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:10.8px;line-height:1.5;color:#3d556f;font-weight:500;"><span style="display:inline-block;padding:1px 7px;border-radius:4px;background:#a9c0d8;color:#0b2440;font-size:9px;font-weight:800;margin-top:1px;white-space:nowrap;">Mater Dei</span><span><b style="color:#0b2440;">Mater Dei</b>, perdeu espa&#231;o at&#233; o IPO de 2021 e recuperou parte com as aquisi&#231;&#245;es feitas depois dele.</span></div><div style="display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start;font-size:10.8px;line-height:1.5;color:#3d556f;font-weight:500;"><span style="display:inline-block;padding:1px 7px;border-radius:4px;background:#cdd8e4;color:#0b2440;font-size:9px;font-weight:800;margin-top:1px;white-space:nowrap;">Einstein+S&#237;rio</span><span><b style="color:#0b2440;">Einstein+S&#237;rio</b>, filantr&#243;picos premium, crescem s&#243; por obra pr&#243;pria, mais devagar que as redes que compram hospitais, e perdem espa&#231;o.</span></div></div>
     </div>
 <div class="c6sec"><span class="stp">3</span><span>Concentrado na geografia</span></div>
 <div class="c6card">
@@ -1224,6 +1360,7 @@
 <div class="accent-top"></div>
 <span class="chip">An&#225;lise do setor &#183; Segmento Hospitalar</span>
 <h3 class="section"><span class="kick">Cadeia de valor</span>De onde vem a margem do hospital?</h3>
+<p><b>Pagadores &amp; neg&#243;cio de markup.</b> J&#225; vimos que ~77% dos pagadores s&#227;o as operadoras. Pela composi&#231;&#227;o da conta hospitalar, <b>materiais &amp; medicamentos</b> somam ~44%, a <b>di&#225;ria</b> ~33% e os <b>honor&#225;rios</b> ~18% (repassados ao m&#233;dico PJ). Ou seja, o hospital &#233; em boa parte um <b>revendedor de materiais numa cama</b>, e a margem vem do <b>mix do caso e do markup</b>. <b>Folha</b>, o CLT &#233; ~34% da despesa (quase toda enfermagem/apoio, fixo) e, com honor&#225;rios, gente vai de ~34% a 48%. <b>Fornecedores</b>, na ortopedia, o maior bloco de OPME, 3 players somam ~58% do mercado global (J&amp;J, Zimmer, Stryker); farmac&#234;uticas mais pulverizadas.</p>
 <div class="c6sec"><span class="stp">1</span><span>A conta hospitalar, o hospital &#233; um revendedor de material numa cama</span></div>
 <div class="c6card">
       <div class="c6title">Composi&#231;&#227;o da conta hospitalar (% do valor faturado), SP, dados de 2005 a 2010</div>
@@ -1236,11 +1373,21 @@
       <div class="chart-src"><b>Fonte,</b> IESS, TD 46 (2013), conta hospitalar de operadora em SP, dados de 2005 a 2010.</div>
     </div>
 <div class="c6sec"><span class="stp">2</span><span>Gente é o maior custo, folha fixa mais o médico PJ variável</span></div>
+<div class="c6row">
 <div class="c6card">
       <div class="c6title">Estrutura de custo do hospital (% da despesa total)</div>
       <div class="chart-wrap" style="height:240px;"><canvas id="chartFornec"></canvas></div>
       <div class="chart-src"><b>Fonte,</b> Observatório ANAHP 2026; Demografia Médica 2025.</div><div style="font-size:8.5px;color:#8a97a5;margin-top:3px;line-height:1.4;">% da despesa total. A ANAHP não separa o honorário médico, que entra em serviços e contratos.</div>
     </div>
+<div class="c6card"><div class="c6title">Rede D&#39;Or, custo dos servi&#231;os hospitalares por natureza (% do custo), 2025</div><div class="chart-wrap" style="height:240px;"><canvas id="s10dor"></canvas></div><div class="chart-src"><b>Fonte,</b> Rede D&#39;Or, Demonstra&#231;&#245;es Financeiras de 2025, Relat&#243;rio da Administra&#231;&#227;o (composi&#231;&#227;o do custo dos servi&#231;os hospitalares, R$ 23,8 bi).</div><div class="v4note">S&#243; o custo dos servi&#231;os hospitalares; as despesas gerais e administrativas (R$ 2,2 bi) n&#227;o t&#234;m abertura por natureza no relat&#243;rio. Demais = utilidades e servi&#231;os (2,1%) e alugu&#233;is (0,4%).</div></div>
+</div>
+<script>(function(){if(typeof Chart==='undefined')return;if(window.ChartDataLabels){try{Chart.register(window.ChartDataLabels);}catch(e){}}
+var el=document.getElementById('s10dor');if(!el)return;
+new Chart(el,{type:'bar',data:{labels:[["Pessoal"], ["Servi\u00e7os de", "terceiros"], ["Materiais e", "medicamentos"], ["Deprecia\u00e7\u00e3o e", "amortiza\u00e7\u00e3o"], ["Demais (utilidades", "e alugu\u00e9is)"]],datasets:[{data:[35.8, 26.1, 29.2, 6.4, 2.5],backgroundColor:["#0b3d73", "#2f74b8", "#5f93c4", "#9db4cf", "#c9d8ea"],borderRadius:3,
+ datalabels:{display:true,anchor:'end',align:'top',color:'#0b3d73',font:{weight:'800',size:11},formatter:function(v){return v.toFixed(1).replace('.',',')+'%';}}}]},
+ options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:18}},plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.parsed.y.toFixed(1).replace('.',',')+'% do custo';}}}},
+ scales:{x:{grid:{display:false},ticks:{font:{size:9,weight:'700'},color:'#243b53',maxRotation:0,minRotation:0,autoSkip:false}},y:{beginAtZero:true,suggestedMax:38,grid:{color:'#eef1f5'},title:{display:true,text:'% do custo'},ticks:{callback:function(v){return v+'%';}}}}}});
+})();</script>
     </div>
   </section>
 <section class="slide">
@@ -1248,6 +1395,32 @@
 <div class="accent-top"></div>
 <span class="chip">An&#225;lise do setor &#183; Segmento Hospitalar</span>
 <h3 class="section"><span class="kick">Cadeia de valor</span>Como o ROIC de um hospital pode ser comprimido?</h3>
+<p>Hospital &#233; um neg&#243;cio de <b>capital intensivo</b>, com imobilizado &amp; &#225;gio ~<b>77%</b> do capital investido e o <b>contas a receber</b> como a outra parte relevante, ~20% do IC fica ref&#233;m da fonte pagadora. <b>Taxa de glosa</b>, a parcela que a operadora se recusa a pagar ao auditar a conta, nos hospitais da ANAHP a <b>inicial</b> roda 12-16% da receita e a <b>perda</b>, depois do recurso, fica perto de 5-6% (5,6% na Rede D'Or), reduzindo a receita efetiva e alongando o ciclo. <b>Prazo m&#233;dio de recebimento</b>, sem multa nem juros por atraso (ao contr&#225;rio do prompt-pay americano), o receb&#237;vel custa <b>PMR &#215; juro</b>, e, com a rela&#231;&#227;o prestador-operadora pior no p&#243;s-pandemia e o juro alto, financiar ficou bem mais caro.</p>
+<div class="barsch">
+      <div class="barc">
+        <div class="barc-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3.5"/><path d="M12 8.2v7.6M8.2 12h7.6"/><path d="M3.5 20.5 20.5 3.5"/></svg></div>
+        <div class="barc-t">Descredenciamento Parcial</div>
+        <div class="barc-d">Operadora fecha a porta de entrada de urg&#234;ncia (PS), mas mant&#233;m o atendimento eletivo agendado para cortar custos imprevis&#237;veis</div>
+        <div class="barc-n ex">2024, Unimed Nacional descredenciou 13 unidades da Rede D'Or nos planos individual, PME e ades&#227;o: 12 por inteiro e 1 s&#243; no pronto-socorro <span class="src">(InfoMoney, 16/02/2024)</span></div>
+      </div>
+      <div class="barc">
+        <div class="barc-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3v5h5"/><path d="m9.5 12.5 5 5M14.5 12.5l-5 5"/></svg></div>
+        <div class="barc-t">Glosa</div>
+        <div class="barc-d">Auditoria agressiva para recusar ou adiar pagamentos sob justificativa de falta de assinaturas ou relat&#243;rios m&#233;dicos.</div>
+      </div>
+      <div class="barc">
+        <div class="barc-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4.2l2.8 1.8"/><path d="M9.5 2.8h5"/></svg></div>
+        <div class="barc-t">Aumento dos prazos de recebimento</div>
+        <div class="barc-d">Atraso intencional no repasse de valores, elevando a necessidade de capital de giro e inflando o capital investido hospitalar.</div>
+        <div class="barc-n ex">2025, Rede D'Or deixou de atender a Unimed Ferj em 6 hospitais do Rio, com a operadora devendo mais de R$ 2 bi a hospitais e cl&#237;nicas do estado <span class="src">(InfoMoney, 08/01/2025; Aherj)</span></div>
+      </div>
+      <div class="barc">
+        <div class="barc-ic"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5 12 3.5l8.5 4v9l-8.5 4-8.5-4z"/><path d="M3.5 7.5 12 11.5l8.5-4M12 11.5v9"/></svg></div>
+        <div class="barc-t">Mudan&#231;a no modelo de remunera&#231;&#227;o</div>
+        <div class="barc-d">Troca do Fee-for-Service por pacotes fixos ou DRG, eliminando o lucro hospitalar sobre a revenda de medicamentos e materiais especiais (OPME).</div>
+        <div class="barc-n ex">2019, Amil descredenciou 10 hospitais da Rede D'Or (7 no Rio e 3 na Grande SP) depois que a rede recusou trocar o fee-for-service por pacotes <span class="src">(O Globo, via Terra, 30/04/2019)</span></div>
+      </div>
+    </div>
 <div class="c6sec"><span class="stp">1</span><span>A glosa trava ~15% da receita na largada, e a perda fica perto de 5-6%</span></div>
 <div class="c6card">
       <div class="c6title" style="margin:0 0 1px;">Rede D'Or, glosa provisionada sobre a receita bruta hospitalar (%)</div>
@@ -3026,29 +3199,49 @@ if(!window.__s45phClick){window.__s45phClick=1;document.addEventListener('click'
 })();</script><script>(function(){
   if(typeof Chart==='undefined') return;
   if(window.ChartDataLabels){try{Chart.register(window.ChartDataLabels);}catch(e){}}
-  var s=document.getElementById('chartBedsShareYr'); if(!s) return;
-  function DL(dark){return {color:dark?'#fff':'#33506f',font:{weight:'800',size:8.5},formatter:function(v){return v>=4?Math.round(v):'';}};}
-  new Chart(s,{type:'bar',data:{labels:['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026LTM'],datasets:[
-    {label:'Rede D\'Or',data:[32.5,33.2,33.9,35.0,37.1,39.1,42.1,42.8,42.6,44.8,45.2,45.5],backgroundColor:'#0b3d73',stack:'s',datalabels:DL(true)},
-    {label:'Hapvida+GNDI',data:[19.8,21.6,23.5,26.2,27.2,26.7,25.4,24.2,24.8,23.9,24.1,24.1],backgroundColor:'#8c6a4f',stack:'s',datalabels:DL(true)},
-    {label:'Rede Am\u00e9ricas',data:[28.6,26.7,24.8,22.1,19.3,17.3,15.9,15.3,15.3,15.0,14.7,14.5],backgroundColor:'#0b8a97',stack:'s',datalabels:DL(true)},
-    {label:'Kora',data:[2.4,2.9,3.3,3.5,4.9,6.7,7.2,7.1,6.9,6.5,6.4,6.3],backgroundColor:'#7ba3cf',stack:'s',datalabels:DL(false)},
-    {label:'Mater Dei',data:[7.1,6.8,6.5,5.8,5.2,4.4,4.3,5.8,5.6,5.3,5.2,5.3],backgroundColor:'#a9c0d8',stack:'s',datalabels:DL(false)},
-    {label:'Einstein+S\u00edrio',data:[9.5,8.8,8.1,7.3,6.3,5.7,5.1,4.8,4.7,4.4,4.4,4.3],backgroundColor:'#cdd8e4',stack:'s',datalabels:DL(false)}
-  ]},
-    options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:4}},
+  var el=document.getElementById('chartBedsShareYr'); if(!el) return;
+  var Y=["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026LTM"];
+  var G=[{n:"Rede D'Or",c:'#0b3d73',t:'#fff',s:[32.5, 33.2, 33.9, 35.0, 37.1, 39.1, 42.1, 42.8, 42.6, 44.8, 45.2, 45.5]},{n:'Hapvida+GNDI',c:'#8c6a4f',t:'#fff',s:[19.8, 21.6, 23.5, 26.2, 27.2, 26.7, 25.4, 24.2, 24.8, 23.9, 24.1, 24.1]},{n:'Rede Américas',c:'#0b8a97',t:'#fff',s:[28.6, 26.7, 24.8, 22.1, 19.3, 17.3, 15.9, 15.3, 15.3, 15.0, 14.7, 14.5]},
+         {n:'Kora',c:'#7ba3cf',t:'#0b2440',s:[2.4, 2.9, 3.3, 3.5, 4.9, 6.7, 7.2, 7.1, 6.9, 6.5, 6.4, 6.3]},{n:'Mater Dei',c:'#a9c0d8',t:'#0b2440',s:[7.1, 6.8, 6.5, 5.8, 5.2, 4.4, 4.3, 5.8, 5.6, 5.3, 5.2, 5.3]},{n:'Einstein+Sírio',c:'#cdd8e4',t:'#0b2440',s:[9.5, 8.8, 8.1, 7.3, 6.3, 5.7, 5.1, 4.8, 4.7, 4.4, 4.4, 4.3]}];
+  var DOR=[4673, 5490, 5996, 6611, 7662, 8819, 10618, 11487, 11737, 13054, 13555, 13617], CN=[277.5, 269.8, 269.3, 266.9, 265.1, 267.2, 269.1, 269.8, 271.7, 274.5, 276.5, 277.1];
+  var BIG=DOR.map(function(d,i){return d/(G[0].s[i]/100);});
+  var TOP=13, MODE='cnes';
+  function f1(v){return v.toFixed(1).replace('.',',');}
+  function th(v){return Math.round(v).toLocaleString('pt-BR');}
+  function hatch(){var c=document.createElement('canvas');c.width=c.height=7;var x=c.getContext('2d');x.fillStyle='#eef2f7';x.fillRect(0,0,7,7);x.strokeStyle='#c3cfdc';x.lineWidth=1.4;
+    x.beginPath();x.moveTo(-1,8);x.lineTo(8,-1);x.moveTo(-1,1);x.lineTo(1,-1);x.moveTo(6,8);x.lineTo(8,6);x.stroke();return x.createPattern(c,'repeat');}
+  var HT=hatch();
+  function share(g,i){return MODE==='cnes'?g.s[i]/100*BIG[i]/(CN[i]*1000)*100:g.s[i];}
+  function dsets(){var out=G.map(function(g){return {label:g.n,data:Y.map(function(_,i){return share(g,i);}),backgroundColor:g.c,stack:'s',borderSkipped:false,
+      datalabels:{display:function(c){var v=c.dataset.data[c.dataIndex];return MODE==='cnes'?v>=0.45:v>=4;},color:g.t,font:{weight:'800',size:MODE==='cnes'?8:8.5},
+        formatter:function(v){return MODE==='cnes'?f1(v):Math.round(v);}}};});
+    if(MODE==='cnes'){var sum=Y.map(function(_,i){return out.reduce(function(a,d){return a+d.data[i];},0);});
+      out.push({label:'Outros prestadores (barra cortada)',data:sum.map(function(s){return TOP-s;}),real:sum.map(function(s){return 100-s;}),backgroundColor:HT,stack:'s',borderRadius:{topLeft:3,topRight:3},borderSkipped:false,
+        datalabels:{display:true,color:'#33506f',font:{weight:'800',size:9},formatter:function(v,c){return f1(c.dataset.real[c.dataIndex]);}}});}
+    return out;}
+  var ch=new Chart(el,{type:'bar',data:{labels:Y,datasets:dsets()},
+    options:{responsive:true,maintainAspectRatio:false,animation:false,layout:{padding:{top:4}},
       plugins:{legend:{position:'bottom',labels:{usePointStyle:true,pointStyle:'rectRounded',boxWidth:11,boxHeight:11,padding:9,color:'#334155',font:{size:10,weight:'700'}}},
-        tooltip:{backgroundColor:'#0b2440',padding:9,cornerRadius:8,callbacks:{label:function(c){return c.dataset.label+': '+c.parsed.y.toFixed(1).replace('.',',')+'%';}}}},
+        tooltip:{backgroundColor:'#0b2440',padding:9,cornerRadius:8,callbacks:{label:function(c){var i=c.dataIndex;
+          if(MODE!=='cnes')return c.dataset.label+': '+f1(c.parsed.y)+'%';
+          if(c.dataset.real)return 'Outros prestadores: '+f1(c.dataset.real[i])+'% ('+th(c.dataset.real[i]/100*CN[i]*1000)+' leitos)';
+          return c.dataset.label+': '+f1(c.parsed.y)+'% ('+th(G[c.datasetIndex].s[i]/100*BIG[i])+' leitos)';},
+          footer:function(it){var i=it[0].dataIndex;return MODE==='cnes'?'Leitos privados e filantrópicos no CNES: '+f1(CN[i]).replace(',0','')+' mil':'';}}}},
       scales:{x:{stacked:true,grid:{display:false},border:{display:false},ticks:{color:'#243b53',font:{size:10,weight:'800'}}},
-        y:{stacked:true,max:100,grid:{color:'#eef2f7'},border:{display:false},ticks:{color:'#94a3b8',font:{size:9},callback:function(v){return v+'%';}}}}}});
+        y:{stacked:true,max:TOP,grid:{color:'#eef2f7'},border:{display:false},ticks:{stepSize:2,color:'#94a3b8',font:{size:9},callback:function(v){return (MODE==='cnes'&&v>12)?'':v+'%';}}}}}});
+  var B=document.getElementById('s6shB'),T=document.getElementById('s6shT');
+  if(B)B.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){MODE=b.getAttribute('data-m');
+    B.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);});
+    ch.data.datasets=dsets();ch.options.scales.y.max=MODE==='cnes'?TOP:100;ch.options.scales.y.ticks.stepSize=MODE==='cnes'?2:20;ch.update();
+    if(T)T.textContent=MODE==='cnes'?'Participação de cada grupo no total de leitos privados e filantrópicos (%)':'Participação de cada grupo no total de leitos das grandes redes (%)';});});
 })();</script><script>(function(){
   if(typeof Chart==='undefined') return;
   if(window.ChartDataLabels){try{Chart.register(window.ChartDataLabels);}catch(e){}}
   var el=document.getElementById('chartFormal16'); if(!el) return;
-  var lab=['~20%*','45%','58%','61%','65%','73%','91%','93,5%','96,9%','97,8%'];
-  new Chart(el,{type:'bar',data:{labels:['Índia','México','Argentina','Brasil','África do Sul','Chile','EUA','Reino Unido','França','Espanha'],
-    datasets:[{data:[20,45,58,61,65,73,91,93.5,96.9,97.8],backgroundColor:['#9db4cf','#9db4cf','#9db4cf','#0b3d73','#9db4cf','#9db4cf','#9db4cf','#9db4cf','#9db4cf','#9db4cf'],borderRadius:3,
-      datalabels:{display:true,anchor:'end',align:'top',color:function(c){return c.dataIndex===3?'#0b3d73':'#4a5a6a';},font:{weight:'800',size:11},formatter:function(v,c){return lab[c.dataIndex];}}}]},
+  var lab=['~20%*','45%','58%','61%','65%','73%','90,5%','91%','93,5%','96,9%','97,8%'];
+  new Chart(el,{type:'bar',data:{labels:['Índia','México','Argentina','Brasil','África do Sul','Chile','Média OCDE','EUA','Reino Unido','França','Espanha'],
+    datasets:[{data:[20,45,58,61,65,73,90.5,91,93.5,96.9,97.8],backgroundColor:['#9db4cf','#9db4cf','#9db4cf','#0b3d73','#9db4cf','#9db4cf','#5f93c4','#9db4cf','#9db4cf','#9db4cf','#9db4cf'],borderRadius:3,
+      datalabels:{display:true,anchor:'end',align:'top',color:function(c){return c.dataIndex===3?'#0b3d73':(c.dataIndex===6?'#1f5c99':'#4a5a6a');},font:{weight:'800',size:11},formatter:function(v,c){return lab[c.dataIndex];}}}]},
     options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:18}},
       plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return lab[c.dataIndex]+' formal';}}}},
       scales:{x:{grid:{display:false},ticks:{font:{size:11,weight:'700'},color:'#243b53'}},
@@ -3600,7 +3793,7 @@ if(!window.__s45phClick){window.__s45phClick=1;document.addEventListener('click'
   if(typeof Chart==='undefined') return;
   if(window.ChartDataLabels){try{Chart.register(window.ChartDataLabels);}catch(e){}}
   var el=document.getElementById('chartFornec'); if(!el) return;
-  var labels=[['Folha CLT','(fixo)'],['Serviços e contratos','(inclui médico PJ)'],'Medicamentos','OPME','Materiais','Demais'];
+  var labels=[['Folha CLT','(fixo)'],['Serviços e','contratos (inclui','médico PJ)'],'Medicamentos','OPME','Materiais','Demais'];
   var data=[33.7,17.3,11.6,8.7,5.6,23.1];
   var colors=['#0b3d73','#2f74b8','#5f93c4','#5f93c4','#5f93c4','#c9d8ea'];
   new Chart(el,{type:'bar',
@@ -3608,7 +3801,7 @@ if(!window.__s45phClick){window.__s45phClick=1;document.addEventListener('click'
       datalabels:{display:true,anchor:'end',align:'top',color:'#0b3d73',font:{weight:'800',size:11},formatter:function(v){return v.toFixed(1).replace('.',',')+'%';}}}]},
     options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:18}},
       plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.parsed.y.toFixed(1).replace('.',',')+'% da despesa';}}}},
-      scales:{x:{grid:{display:false},ticks:{font:{size:10,weight:'700'},color:'#243b53'}},
+      scales:{x:{grid:{display:false},ticks:{font:{size:9,weight:'700'},color:'#243b53',maxRotation:0,minRotation:0,autoSkip:false}},
         y:{beginAtZero:true,suggestedMax:38,grid:{color:'#eef1f5'},title:{display:true,text:'% da despesa'},ticks:{callback:function(v){return v+'%';}}}}}
   });
 })();
