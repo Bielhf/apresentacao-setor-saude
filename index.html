@@ -1379,14 +1379,20 @@ mk('s5gH',[1.450,1.312,1.207,1.039,0.779,0.548,0.347,0.097,-0.145,-0.079],4,0.84
       <div class="chart-wrap" style="height:240px;"><canvas id="chartFornec"></canvas></div>
       <div class="chart-src"><b>Fonte,</b> Observatório ANAHP 2026; Demografia Médica 2025.</div><div style="font-size:8.5px;color:#8a97a5;margin-top:3px;line-height:1.4;">% da despesa total. A ANAHP não separa o honorário médico, que entra em serviços e contratos.</div>
     </div>
-<div class="c6card"><div class="c6title">Rede D&#39;Or, custo dos servi&#231;os hospitalares por natureza (% do custo), 2025</div><div class="chart-wrap" style="height:240px;"><canvas id="s10dor"></canvas></div><div class="chart-src"><b>Fonte,</b> Rede D&#39;Or, Demonstra&#231;&#245;es Financeiras de 2025, Relat&#243;rio da Administra&#231;&#227;o (composi&#231;&#227;o do custo dos servi&#231;os hospitalares, R$ 23,8 bi).</div><div class="v4note">S&#243; o custo dos servi&#231;os hospitalares; as despesas gerais e administrativas (R$ 2,2 bi) n&#227;o t&#234;m abertura por natureza no relat&#243;rio. Demais = utilidades e servi&#231;os (2,1%) e alugu&#233;is (0,4%).</div></div>
+<div class="c6card"><div class="c6title">Rede D'Or, OpEx e SG&amp;A por natureza, sem D&amp;A, 2025</div><div class="chart-wrap" style="height:300px;"><canvas id="s10dor"></canvas></div><div class="chart-src"><b>Fonte,</b> Rede D'Or, Demonstra&#231;&#245;es Financeiras de 2025: notas 19.1 (custos dos servi&#231;os hospitalares) e 20 (despesas gerais e administrativas) e demonstra&#231;&#227;o do resultado (despesas comerciais).</div></div>
 </div>
 <script>(function(){if(typeof Chart==='undefined')return;if(window.ChartDataLabels){try{Chart.register(window.ChartDataLabels);}catch(e){}}
 var el=document.getElementById('s10dor');if(!el)return;
-new Chart(el,{type:'bar',data:{labels:[["Pessoal"], ["Servi\u00e7os de", "terceiros"], ["Materiais e", "medicamentos"], ["Deprecia\u00e7\u00e3o e", "amortiza\u00e7\u00e3o"], ["Demais (utilidades", "e alugu\u00e9is)"]],datasets:[{data:[35.8, 26.1, 29.2, 6.4, 2.5],backgroundColor:["#0b3d73", "#2f74b8", "#5f93c4", "#9db4cf", "#c9d8ea"],borderRadius:3,
- datalabels:{display:true,anchor:'end',align:'top',color:'#0b3d73',font:{weight:'800',size:11},formatter:function(v){return v.toFixed(1).replace('.',',')+'%';}}}]},
- options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:18}},plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.parsed.y.toFixed(1).replace('.',',')+'% do custo';}}}},
- scales:{x:{grid:{display:false},ticks:{font:{size:9,weight:'700'},color:'#243b53',maxRotation:0,minRotation:0,autoSkip:false}},y:{beginAtZero:true,suggestedMax:38,grid:{color:'#eef1f5'},title:{display:true,text:'% do custo'},ticks:{callback:function(v){return v+'%';}}}}}});
+function f(v){return v==null?'':v.toFixed(1).replace('.',',')+'%';}
+new Chart(el,{type:'bar',data:{labels:["Pessoal", ["Materiais e", "medicamentos"], ["Servi\u00e7os de", "terceiros"], ["Provis\u00e3o para", "demandas judiciais"], ["Despesas", "comerciais"], ["Viagens e", "hospedagens"], ["Utilidades e", "servi\u00e7os"], "Alugu\u00e9is"],datasets:[
+ {label:"OpEx: custo dos servi\u00e7os hospitalares, R$ 22,3 bi",data:[38.3, 31.2, 27.9, null, null, null, 2.2, 0.4],backgroundColor:'#0b3d73',borderRadius:3,skipNull:true,barPercentage:.9,categoryPercentage:.84},
+ {label:"SG&A: despesas gerais, administrativas e comerciais, consolidado, R$ 2,0 bi",data:[50.7, null, 18.6, 21.3, 5.1, 4.3, null, null],backgroundColor:'#7fa8d6',borderRadius:3,skipNull:true,barPercentage:.9,categoryPercentage:.84}]},
+ options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,layout:{padding:{right:34}},
+  plugins:{legend:{display:true,position:'top',align:'start',labels:{boxWidth:10,boxHeight:10,font:{size:9.5,weight:'700'},color:'#243b53',padding:8}},
+   tooltip:{callbacks:{label:function(c){return f(c.parsed.x)+(c.datasetIndex===0?' do OpEx':' do SG&A');}}},
+   datalabels:{display:function(c){return c.dataset.data[c.dataIndex]!=null;},anchor:'end',align:'right',offset:3,clamp:true,color:'#0b3d73',font:{weight:'800',size:10},formatter:f}},
+  scales:{y:{grid:{display:false},ticks:{font:{size:9.5,weight:'700'},color:'#243b53',autoSkip:false}},
+   x:{beginAtZero:true,suggestedMax:55,grid:{color:'#eef1f5'},title:{display:true,text:'% do OpEx e % do SG&A'},ticks:{callback:function(v){return v+'%';}}}}}});
 })();</script>
     </div>
   </section>
